@@ -30,8 +30,11 @@ class RestaurantTest {
         }
 
         @Test
-        public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
+        public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time() {
             //WRITE UNIT TEST CASE HERE
+            restaurantCreation();
+            restaurant.setClosingTime(LocalTime.now().minusMinutes(10));
+            assertFalse(restaurant.isRestaurantOpen());
         }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
